@@ -1,0 +1,12 @@
+{
+  "valid": [{
+      "userName": "user",
+      "password": "user"
+    },
+    {
+      "userName": "test",
+      "password": "test"
+    }
+  ],
+  "error": "Invalid Login credentials!"
+}

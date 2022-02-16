@@ -1,0 +1,47 @@
+ @import  "../../assets/../assets/variable.scss";
+.login-cont {
+  background-color: white;
+  padding-bottom: 2rem;
+
+  .form-control-group {
+    input {
+      background-color: white;
+      display: inline-block;
+      padding-right: 45px;
+      text-align: center;
+    }
+
+    .input-cont {
+      position: relative;
+    }
+
+    input::placeholder {
+      color: green;
+    }
+
+    input:focus {
+      box-shadow: none;
+    }
+    i {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid lightgray;
+      width: 10%;
+    }
+
+    .error {
+      color: $error-border-color;
+      position: absolute;
+    }
+  }
+
+  .ng-invalid.ng-touched:not(.form-cont) {
+    border: 1px solid $error-border-color;;
+  }
+
+}

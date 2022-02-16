@@ -1,0 +1,42 @@
+<div class="container login-cont">
+  <div class="col-sm-8 offset-sm-2">
+    <img class="logo" src="assets/images/bhes-horizontal.svg" alt="Logo" />
+  </div>
+
+  <form class="row form-cont" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="col-sm-8 offset-sm-2 py-4 px-0 form-control-group">
+      <label class="label" for="user-name">Username</label>
+
+      <div class="input-cont">
+        <input type="text" id="user-name" class="input-field form-control" formControlName="userName" name="userName"
+          autocomplete="off" placeholder="User or password should be : user || test">
+        <i class="fas fa-user icon"></i>
+      </div>
+      <div *ngIf="userName?.invalid && (userName?.dirty || userName?.touched)">
+        <div class="error" *ngIf="userName?.errors?.['required']">
+          Required
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8 offset-sm-2 t-4 pb-4  px-0 form-control-group">
+      <label class="label" for="password">Password </label>
+      <div class="input-cont">
+
+        <input type="password" id="password" class="input-field form-control"
+         placeholder="User or password should be : user || test"
+          formControlName="password" name="password" autocomplete="off">
+        <i class="fas fa-lock icon"></i>
+      </div>
+
+      <div class="error-cont" *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+        <div class="error" *ngIf="password?.errors?.['required']">
+          Required
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid || loading" class="btn btn-warning btn-block  col-sm-8 offset-sm-2">LOG IN
+      <i class="fas fa-sign-in"></i></button>
+  </form>
+
+</div>
